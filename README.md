@@ -1,2 +1,15 @@
-# studentweb
-The college Authentication Portal provides a secure gateway for both students and department staff to access institutional resources. Students can log in using their student ID and password
+The college Authentication Portal provides a secure gateway for both students and department staff to access institutional resources. Students can log in using their student ID and password to access academic records, course materials, and campus services, while department staff members authenticate with their employee credentials to manage administrative functions, access departmental data, and perform institutional operations. The system employs robust security measures including encrypted connections and multi-factor authentication to protect sensitive information, ensuring that each user can only access appropriate resources based on their role within the university community. This streamlined authentication process maintains the integrity of our digital ecosystem while providing convenient access to the tools and information needed for academic and administrative success.
+requirements 
+1.Web Browser (any modern browser):
+    Google Chrome
+    Mozilla Firefox
+    Microsoft Edge
+    Safari
+    Opera
+2.Text Editor (optional, for editing):
+    Visual Studio Code
+    Sublime Text
+    Atom
+    Notepad++
+    Basic Notepad/TextEdit
+    
