@@ -13,3 +13,6 @@ requirements
     Notepad++
     Basic Notepad/TextEdit
     
+screenshots:
+![Screenshot_1-10-2025_05824_](https://github.com/user-attachments/assets/6a90d8ed-e042-4583-9051-fa5e5df20b07)
+
