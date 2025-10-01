@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Community Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-user-graduate"></i> Student Community Portal</h1>
+            <p class="tagline">Connect, Collaborate, and Grow Together</p>
+        </header>
+        
+        <!-- Login Section -->
+        <section class="login-section" id="loginSection">
+            <div class="login-card student">
+                <h2><i class="fas fa-user"></i> Student Login</h2>
+                <p>Access to edit and contribute content</p>
+                <div class="input-group">
+                    <input type="text" id="studentId" placeholder="Student ID">
+                    <input type="password" id="studentPassword" placeholder="Password">
+                </div>
+                <button class="login-btn" onclick="login('student')">Login as Student</button>
+            </div>
+            
+            <div class="login-card staff">
+                <h2><i class="fas fa-chalkboard-teacher"></i> Staff Login</h2>
+                <p>View student content (read-only)</p>
+                <div class="input-group">
+                    <input type="text" id="staffId" placeholder="Staff ID">
+                    <input type="password" id="staffPassword" placeholder="Password">
+                </div>
+                <button class="login-btn staff" onclick="login('staff')">Login as Staff</button>
+            </div>
+        </section>
+        
+        <!-- Student Content Section -->
+        <section class="content-section" id="studentSection">
+            <div class="user-info">
+                <h2>Welcome, <span id="studentName">Student</span>!</h2>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            
+            <div id="accessInfo" class="access-info">
+                <i class="fas fa-info-circle"></i> You have access to edit content only for your <strong id="userDeptInfo">MCA</strong> department.
+            </div>
+            
+            <h3>Select Your Department:</h3>
+            <div class="department-selector" id="studentDeptSelector">
+                <!-- Department cards will be dynamically updated based on student's access -->
+            </div>
+            
+            <div class="content-editor">
+                <h3>Department Content Editor</h3>
+                <p>Edit content for <span id="currentDept">MCA</span> department:</p>
+                <textarea id="deptContent" placeholder="Write about your department activities, events, announcements, etc.">Welcome to the MCA department! This is a sample content that can be edited by students.</textarea>
+                <div id="lockInfo" class="lock-info" style="display: none;">
+                    <i class="fas fa-lock"></i> Content is locked. You can edit again in: <span id="timeRemaining"></span>
+                </div>
+                <button class="save-btn" id="saveBtn" onclick="saveContent()"><i class="fas fa-save"></i> Save Content</button>
+            </div>
+        </section>
+        
+        <!-- Staff Content Section -->
+        <section class="content-section" id="staffSection">
+            <div class="user-info">
+                <h2>Welcome, <span id="staffName">Staff Member</span>!</h2>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+            
+            <h3>Select Department to View:</h3>
+            <div class="department-selector">
+                <div class="dept-card active" data-dept="MCA">
+                    <div class="dept-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>MCA</h3>
+                    <p>Master of Computer Applications</p>
+                </div>
+                <div class="dept-card" data-dept="ECE">
+                    <div class="dept-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>ECE</h3>
+                    <p>Electronics and Communication Engineering</p>
+                </div>
+                <div class="dept-card" data-dept="EEE">
+                    <div class="dept-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>EEE</h3>
+                    <p>Electrical and Electronics Engineering</p>
+                </div>
+                <div class="dept-card" data-dept="AI_DS">
+                    <div class="dept-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI & DS</h3>
+                    <p>Artificial Intelligence and Data Science</p>
+                </div>
+                <div class="dept-card" data-dept="IT">
+                    <div class="dept-icon"><i class="fas fa-server"></i></div>
+                    <h3>IT</h3>
+                    <p>Information Technology</p>
+                </div>
+            </div>
+            
+            <div class="content-viewer">
+                <h3>Department Content Viewer</h3>
+                <p>Viewing content for <span id="viewDept">MCA</span> department:</p>
+                <div class="content-display" id="contentDisplay">
+                    Welcome to the MCA department! This is a sample content that can be edited by students.
+                </div>
+            </div>
+        </section>
+        
+        <div class="notification" id="notification">Content saved successfully!</div>
+        <div class="error-notification" id="errorNotification">Invalid credentials!</div>
+        
+        <footer>
+            <p>student community © 2024</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
